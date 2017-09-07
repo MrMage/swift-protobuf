@@ -496,8 +496,9 @@ internal struct TextFormatScanner {
                 throw TextFormatDecodingError.malformedNumber
             }
             let n = try nextUInt()
-            if n >= 0x8000000000000000 { // -Int64.min
-                if n > 0x8000000000000000 {
+            let Int64MaxPlusOne: UInt = 0x8000000000000000
+            if n >= Int64MaxPlusOne { // -Int64.min
+                if n > Int64MaxPlusOne {
                     // Too large negative number
                     throw TextFormatDecodingError.malformedNumber
                 } else {
