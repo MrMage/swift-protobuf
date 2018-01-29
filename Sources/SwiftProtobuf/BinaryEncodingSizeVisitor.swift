@@ -19,11 +19,15 @@ import Foundation
 /// properly sized `Data` or `UInt8` array can be pre-allocated before
 /// serialization.
 internal struct BinaryEncodingSizeVisitor: Visitor {
+  
+  var sizeCache: BinarySizeCache
 
   /// Accumulates the required size of the message during traversal.
   var serializedSize: Int = 0
 
-  init() {}
+  init(sizeCache: BinarySizeCache) {
+    self.sizeCache = sizeCache
+  }
 
   mutating func visitUnknown(bytes: Data) throws {
     serializedSize += bytes.count
@@ -246,7 +250,7 @@ internal struct BinaryEncodingSizeVisitor: Visitor {
                                              fieldNumber: Int) throws {
     let tagSize = FieldTag(fieldNumber: fieldNumber,
                            wireFormat: .lengthDelimited).encodedSize
-    let messageSize = try value.serializedDataSize()
+    let messageSize = try sizeCache.getSerializedDataSize(value)
     serializedSize +=
       tagSize + Varint.encodedSize(of: UInt64(messageSize)) + messageSize
   }
@@ -257,7 +261,7 @@ internal struct BinaryEncodingSizeVisitor: Visitor {
                            wireFormat: .lengthDelimited).encodedSize
     serializedSize += value.count * tagSize
     for v in value {
-      let messageSize = try v.serializedDataSize()
+      let messageSize = try sizeCache.getSerializedDataSize(v)
       serializedSize +=
         Varint.encodedSize(of: UInt64(messageSize)) + messageSize
     }
@@ -290,7 +294,7 @@ internal struct BinaryEncodingSizeVisitor: Visitor {
     let tagSize = FieldTag(fieldNumber: fieldNumber,
                            wireFormat: .lengthDelimited).encodedSize
     for (k,v) in value {
-        var sizer = BinaryEncodingSizeVisitor()
+        var sizer = BinaryEncodingSizeVisitor(sizeCache: sizeCache)
         try KeyType.visitSingular(value: k, fieldNumber: 1, with: &sizer)
         try ValueType.visitSingular(value: v, fieldNumber: 2, with: &sizer)
         let entrySize = sizer.serializedSize
@@ -307,7 +311,7 @@ internal struct BinaryEncodingSizeVisitor: Visitor {
     let tagSize = FieldTag(fieldNumber: fieldNumber,
                            wireFormat: .lengthDelimited).encodedSize
     for (k,v) in value {
-        var sizer = BinaryEncodingSizeVisitor()
+        var sizer = BinaryEncodingSizeVisitor(sizeCache: sizeCache)
         try KeyType.visitSingular(value: k, fieldNumber: 1, with: &sizer)
         try sizer.visitSingularEnumField(value: v, fieldNumber: 2)
         let entrySize = sizer.serializedSize
@@ -324,7 +328,7 @@ internal struct BinaryEncodingSizeVisitor: Visitor {
     let tagSize = FieldTag(fieldNumber: fieldNumber,
                            wireFormat: .lengthDelimited).encodedSize
     for (k,v) in value {
-        var sizer = BinaryEncodingSizeVisitor()
+        var sizer = BinaryEncodingSizeVisitor(sizeCache: sizeCache)
         try KeyType.visitSingular(value: k, fieldNumber: 1, with: &sizer)
         try sizer.visitSingularMessageField(value: v, fieldNumber: 2)
         let entrySize = sizer.serializedSize
@@ -338,7 +342,7 @@ internal struct BinaryEncodingSizeVisitor: Visitor {
     start: Int,
     end: Int
   ) throws {
-    var sizer = BinaryEncodingMessageSetSizeVisitor()
+    var sizer = BinaryEncodingMessageSetSizeVisitor(sizeCache: sizeCache)
     try fields.traverse(visitor: &sizer, start: start, end: end)
     serializedSize += sizer.serializedSize
   }
@@ -348,16 +352,20 @@ internal extension BinaryEncodingSizeVisitor {
 
   // Helper Visitor to compute the sizes when writing out the extensions as MessageSets.
   internal struct BinaryEncodingMessageSetSizeVisitor: SelectiveVisitor {
+    let sizeCache: BinarySizeCache
+    
     var serializedSize: Int = 0
 
-    init() {}
+    init(sizeCache: BinarySizeCache) {
+      self.sizeCache = sizeCache
+    }
 
     mutating func visitSingularMessageField<M: Message>(value: M, fieldNumber: Int) throws {
       var groupSize = WireFormat.MessageSet.itemTagsEncodedSize
 
       groupSize += Varint.encodedSize(of: Int32(fieldNumber))
 
-      let messageSize = try value.serializedDataSize()
+      let messageSize = try sizeCache.getSerializedDataSize(value)
       groupSize += Varint.encodedSize(of: UInt64(messageSize)) + messageSize
 
       serializedSize += groupSize

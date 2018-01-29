@@ -117,6 +117,8 @@ public protocol Message: CustomDebugStringConvertible {
   /// normal `Equatable`. `Equatable` is provided with specific generated
   /// types.
   func isEqualTo(message: Message) -> Bool
+  
+  var _messageSizeCacheKey: UnsafeMutableRawPointer? { get }
 }
 
 public extension Message {

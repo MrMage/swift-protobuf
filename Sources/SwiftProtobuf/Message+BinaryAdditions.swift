@@ -14,6 +14,24 @@
 
 import Foundation
 
+final class BinarySizeCache {
+  private var cachedSizes: [Int: Int] = [:]
+  
+  func getSerializedDataSize<M: Message>(_ message: M) throws -> Int {
+    if let cacheKey = (message._messageSizeCacheKey.map { Int(bitPattern: $0) }) {
+      if let cachedSize = cachedSizes[cacheKey] {
+        return cachedSize
+      } else {
+        let computedSize = try message.serializedDataSize(sizeCache: self)
+        cachedSizes[cacheKey] = computedSize
+        return computedSize
+      }
+    } else {
+      return try message.serializedDataSize(sizeCache: self)
+    }
+  }
+}
+
 /// Binary encoding and decoding methods for messages.
 public extension Message {
   /// Returns a `Data` value containing the Protocol Buffer binary format
@@ -31,10 +49,11 @@ public extension Message {
     if !partial && !isInitialized {
       throw BinaryEncodingError.missingRequiredFields
     }
-    let requiredSize = try serializedDataSize()
+    let sizeCache = BinarySizeCache()
+    let requiredSize = try sizeCache.getSerializedDataSize(self)
     var data = Data(count: requiredSize)
     try data.withUnsafeMutableBytes { (pointer: UnsafeMutablePointer<UInt8>) in
-      var visitor = BinaryEncodingVisitor(forWritingInto: pointer)
+      var visitor = BinaryEncodingVisitor(forWritingInto: pointer, sizeCache: sizeCache)
       try traverse(visitor: &visitor)
       // Currently not exposing this from the api because it really would be
       // an internal error in the library and should never happen.
@@ -46,11 +65,11 @@ public extension Message {
   /// Returns the size in bytes required to encode the message in binary format.
   /// This is used by `serializedData()` to precalculate the size of the buffer
   /// so that encoding can proceed without bounds checks or reallocation.
-  internal func serializedDataSize() throws -> Int {
+  fileprivate func serializedDataSize(sizeCache: BinarySizeCache) throws -> Int {
     // Note: since this api is internal, it doesn't currently worry about
     // needing a partial argument to handle proto2 syntax required fields.
     // If this become public, it will need that added.
-    var visitor = BinaryEncodingSizeVisitor()
+    var visitor = BinaryEncodingSizeVisitor(sizeCache: sizeCache)
     try traverse(visitor: &visitor)
     return visitor.serializedSize
   }

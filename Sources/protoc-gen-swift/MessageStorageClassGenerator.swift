@@ -75,6 +75,14 @@ class MessageStorageClassGenerator {
     p.outdent()
     p.print("}\n")
   }
+  
+  func generateMessageSizeCacheKey(printer p: inout CodePrinter) {
+    p.print("public var _messageSizeCacheKey: UnsafeMutableRawPointer? {\n")
+    p.indent()
+    p.print("return Unmanaged.passUnretained(_storage).toOpaque()\n")
+    p.outdent()
+    p.print("}\n")
+  }
 
   func generatePreTraverse(printer p: inout CodePrinter) {
     // Nothing

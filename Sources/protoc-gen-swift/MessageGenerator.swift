@@ -210,6 +210,11 @@ class MessageGenerator {
       storage.generateTypeDeclaration(printer: &p)
       p.print("\n")
       storage.generateUniqueStorage(printer: &p)
+      p.print("\n")
+      storage.generateMessageSizeCacheKey(printer: &p)
+    } else {
+      p.print("\n")
+      generateMessageSizeCacheKey(printer: &p)
     }
     p.print("\n")
     generateMessageImplementationBase(printer: &p)
@@ -346,6 +351,14 @@ class MessageGenerator {
     p.print("}\n")
   }
 
+  private func generateMessageSizeCacheKey(printer p: inout CodePrinter) {
+    p.print("public var _messageSizeCacheKey: UnsafeMutableRawPointer? {\n")
+    p.indent()
+    p.print("return nil\n")
+    p.outdent()
+    p.print("}\n")
+  }
+  
   private func generateMessageImplementationBase(printer p: inout CodePrinter) {
     p.print("\(visibility)func _protobuf_generated_isEqualTo(other: \(swiftFullName)) -> Bool {\n")
     p.indent()

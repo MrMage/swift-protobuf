@@ -19,6 +19,8 @@ import Foundation
 internal struct BinaryEncodingVisitor: Visitor {
 
   var encoder: BinaryEncoder
+  
+  let sizeCache: BinarySizeCache
 
   /// Creates a new visitor that writes the binary-coded message into the memory
   /// at the given pointer.
@@ -26,12 +28,14 @@ internal struct BinaryEncodingVisitor: Visitor {
   /// - Precondition: `pointer` must point to an allocated block of memory that
   ///   is large enough to hold the entire encoded message. For performance
   ///   reasons, the encoder does not make any attempts to verify this.
-  init(forWritingInto pointer: UnsafeMutablePointer<UInt8>) {
+  init(forWritingInto pointer: UnsafeMutablePointer<UInt8>, sizeCache: BinarySizeCache) {
     encoder = BinaryEncoder(forWritingInto: pointer)
+    self.sizeCache = sizeCache
   }
 
-  init(encoder: BinaryEncoder) {
+  init(encoder: BinaryEncoder, sizeCache: BinarySizeCache) {
     self.encoder = encoder
+    self.sizeCache = sizeCache
   }
 
   mutating func visitUnknown(bytes: Data) throws {
@@ -106,7 +110,7 @@ internal struct BinaryEncodingVisitor: Visitor {
   mutating func visitSingularMessageField<M: Message>(value: M,
                                              fieldNumber: Int) throws {
     encoder.startField(fieldNumber: fieldNumber, wireFormat: .lengthDelimited)
-    let length = try value.serializedDataSize()
+    let length = try sizeCache.getSerializedDataSize(value)
     encoder.putVarInt(value: length)
     try value.traverse(visitor: &self)
   }
@@ -269,7 +273,7 @@ internal struct BinaryEncodingVisitor: Visitor {
   ) throws {
     for (k,v) in value {
       encoder.startField(fieldNumber: fieldNumber, wireFormat: .lengthDelimited)
-      var sizer = BinaryEncodingSizeVisitor()
+      var sizer = BinaryEncodingSizeVisitor(sizeCache: sizeCache)
       try KeyType.visitSingular(value: k, fieldNumber: 1, with: &sizer)
       try ValueType.visitSingular(value: v, fieldNumber: 2, with: &sizer)
       let entrySize = sizer.serializedSize
@@ -286,7 +290,7 @@ internal struct BinaryEncodingVisitor: Visitor {
   ) throws where ValueType.RawValue == Int {
     for (k,v) in value {
       encoder.startField(fieldNumber: fieldNumber, wireFormat: .lengthDelimited)
-      var sizer = BinaryEncodingSizeVisitor()
+      var sizer = BinaryEncodingSizeVisitor(sizeCache: sizeCache)
       try KeyType.visitSingular(value: k, fieldNumber: 1, with: &sizer)
       try sizer.visitSingularEnumField(value: v, fieldNumber: 2)
       let entrySize = sizer.serializedSize
@@ -303,7 +307,7 @@ internal struct BinaryEncodingVisitor: Visitor {
   ) throws {
     for (k,v) in value {
       encoder.startField(fieldNumber: fieldNumber, wireFormat: .lengthDelimited)
-      var sizer = BinaryEncodingSizeVisitor()
+      var sizer = BinaryEncodingSizeVisitor(sizeCache: sizeCache)
       try KeyType.visitSingular(value: k, fieldNumber: 1, with: &sizer)
       try sizer.visitSingularMessageField(value: v, fieldNumber: 2)
       let entrySize = sizer.serializedSize
@@ -318,7 +322,7 @@ internal struct BinaryEncodingVisitor: Visitor {
     start: Int,
     end: Int
   ) throws {
-    var subVisitor = BinaryEncodingMessageSetVisitor(encoder: encoder)
+    var subVisitor = BinaryEncodingMessageSetVisitor(encoder: encoder, sizeCache: sizeCache)
     try fields.traverse(visitor: &subVisitor, start: start, end: end)
     encoder = subVisitor.encoder
   }
@@ -329,9 +333,11 @@ internal extension BinaryEncodingVisitor {
   // Helper Visitor to when writing out the extensions as MessageSets.
   internal struct BinaryEncodingMessageSetVisitor: SelectiveVisitor {
     var encoder: BinaryEncoder
+    var sizeCache: BinarySizeCache
 
-    init(encoder: BinaryEncoder) {
+    init(encoder: BinaryEncoder, sizeCache: BinarySizeCache) {
       self.encoder = encoder
+      self.sizeCache = sizeCache
     }
 
     mutating func visitSingularMessageField<M: Message>(value: M, fieldNumber: Int) throws {
@@ -344,10 +350,10 @@ internal extension BinaryEncodingVisitor {
 
       // Use a normal BinaryEncodingVisitor so any message fields end up in the
       // normal wire format (instead of MessageSet format).
-      let length = try value.serializedDataSize()
+      let length = try sizeCache.getSerializedDataSize(value)
       encoder.putVarInt(value: length)
       // Create the sub encoder after writing the length.
-      var subVisitor = BinaryEncodingVisitor(encoder: encoder)
+      var subVisitor = BinaryEncodingVisitor(encoder: encoder, sizeCache: sizeCache)
       try value.traverse(visitor: &subVisitor)
       encoder = subVisitor.encoder
 
