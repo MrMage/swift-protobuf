@@ -628,6 +628,10 @@ extension Swift_Protobuf_TestFieldOrderings: SwiftProtobuf._MessageImplementatio
     return _storage
   }
 
+  public var _messageSizeCacheKey: UnsafeMutableRawPointer? {
+    return Unmanaged.passUnretained(_storage).toOpaque()
+  }
+
   func _protobuf_generated_isEqualTo(other: Swift_Protobuf_TestFieldOrderings) -> Bool {
     if _storage !== other._storage {
       let storagesAreEqual: Bool = withExtendedLifetime((_storage, other._storage)) { (_args: (_StorageClass, _StorageClass)) in
@@ -654,6 +658,10 @@ extension Swift_Protobuf_TestFieldOrderings.NestedMessage: SwiftProtobuf._Messag
     1: .same(proto: "bb"),
   ]
 
+  public var _messageSizeCacheKey: UnsafeMutableRawPointer? {
+    return nil
+  }
+
   func _protobuf_generated_isEqualTo(other: Swift_Protobuf_TestFieldOrderings.NestedMessage) -> Bool {
     if self._oo != other._oo {return false}
     if self._bb != other._bb {return false}
@@ -674,6 +682,10 @@ extension Swift_Protobuf_OneofTraversalGeneration: SwiftProtobuf._MessageImpleme
     301: .same(proto: "a4"),
     326: .same(proto: "b4"),
   ]
+
+  public var _messageSizeCacheKey: UnsafeMutableRawPointer? {
+    return nil
+  }
 
   func _protobuf_generated_isEqualTo(other: Swift_Protobuf_OneofTraversalGeneration) -> Bool {
     if self.oGood != other.oGood {return false}

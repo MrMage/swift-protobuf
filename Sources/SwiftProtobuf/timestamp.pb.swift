@@ -181,6 +181,10 @@ extension Google_Protobuf_Timestamp: SwiftProtobuf._MessageImplementationBase, S
     2: .same(proto: "nanos"),
   ]
 
+  public var _messageSizeCacheKey: UnsafeMutableRawPointer? {
+    return nil
+  }
+
   public func _protobuf_generated_isEqualTo(other: Google_Protobuf_Timestamp) -> Bool {
     if self.seconds != other.seconds {return false}
     if self.nanos != other.nanos {return false}

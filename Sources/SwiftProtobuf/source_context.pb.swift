@@ -95,6 +95,10 @@ extension Google_Protobuf_SourceContext: SwiftProtobuf._MessageImplementationBas
     1: .standard(proto: "file_name"),
   ]
 
+  public var _messageSizeCacheKey: UnsafeMutableRawPointer? {
+    return nil
+  }
+
   public func _protobuf_generated_isEqualTo(other: Google_Protobuf_SourceContext) -> Bool {
     if self.fileName != other.fileName {return false}
     if unknownFields != other.unknownFields {return false}

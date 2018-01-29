@@ -977,6 +977,10 @@ extension Proto2NofieldpresenceUnittest_TestAllTypes: SwiftProtobuf._MessageImpl
     return _storage
   }
 
+  public var _messageSizeCacheKey: UnsafeMutableRawPointer? {
+    return Unmanaged.passUnretained(_storage).toOpaque()
+  }
+
   func _protobuf_generated_isEqualTo(other: Proto2NofieldpresenceUnittest_TestAllTypes) -> Bool {
     if _storage !== other._storage {
       let storagesAreEqual: Bool = withExtendedLifetime((_storage, other._storage)) { (_args: (_StorageClass, _StorageClass)) in
@@ -1051,6 +1055,10 @@ extension Proto2NofieldpresenceUnittest_TestAllTypes.NestedMessage: SwiftProtobu
     1: .same(proto: "bb"),
   ]
 
+  public var _messageSizeCacheKey: UnsafeMutableRawPointer? {
+    return nil
+  }
+
   func _protobuf_generated_isEqualTo(other: Proto2NofieldpresenceUnittest_TestAllTypes.NestedMessage) -> Bool {
     if self.bb != other.bb {return false}
     if unknownFields != other.unknownFields {return false}
@@ -1082,6 +1090,10 @@ extension Proto2NofieldpresenceUnittest_TestProto2Required: SwiftProtobuf._Messa
     return _storage
   }
 
+  public var _messageSizeCacheKey: UnsafeMutableRawPointer? {
+    return Unmanaged.passUnretained(_storage).toOpaque()
+  }
+
   func _protobuf_generated_isEqualTo(other: Proto2NofieldpresenceUnittest_TestProto2Required) -> Bool {
     if _storage !== other._storage {
       let storagesAreEqual: Bool = withExtendedLifetime((_storage, other._storage)) { (_args: (_StorageClass, _StorageClass)) in
@@ -1101,6 +1113,10 @@ extension Proto2NofieldpresenceUnittest_ForeignMessage: SwiftProtobuf._MessageIm
   static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .same(proto: "c"),
   ]
+
+  public var _messageSizeCacheKey: UnsafeMutableRawPointer? {
+    return nil
+  }
 
   func _protobuf_generated_isEqualTo(other: Proto2NofieldpresenceUnittest_ForeignMessage) -> Bool {
     if self.c != other.c {return false}

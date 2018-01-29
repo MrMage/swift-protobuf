@@ -103,6 +103,10 @@ extension ProtobufUnittestImport_PublicImportMessage: SwiftProtobuf._MessageImpl
     1: .same(proto: "e"),
   ]
 
+  public var _messageSizeCacheKey: UnsafeMutableRawPointer? {
+    return nil
+  }
+
   func _protobuf_generated_isEqualTo(other: ProtobufUnittestImport_PublicImportMessage) -> Bool {
     if self._e != other._e {return false}
     if unknownFields != other.unknownFields {return false}

@@ -435,6 +435,10 @@ extension ProtobufUnittest_TestEnumMap: SwiftProtobuf._MessageImplementationBase
     102: .standard(proto: "unknown_map_field"),
   ]
 
+  public var _messageSizeCacheKey: UnsafeMutableRawPointer? {
+    return nil
+  }
+
   func _protobuf_generated_isEqualTo(other: ProtobufUnittest_TestEnumMap) -> Bool {
     if self.knownMapField != other.knownMapField {return false}
     if self.unknownMapField != other.unknownMapField {return false}
@@ -449,6 +453,10 @@ extension ProtobufUnittest_TestEnumMapPlusExtra: SwiftProtobuf._MessageImplement
     102: .standard(proto: "unknown_map_field"),
   ]
 
+  public var _messageSizeCacheKey: UnsafeMutableRawPointer? {
+    return nil
+  }
+
   func _protobuf_generated_isEqualTo(other: ProtobufUnittest_TestEnumMapPlusExtra) -> Bool {
     if self.knownMapField != other.knownMapField {return false}
     if self.unknownMapField != other.unknownMapField {return false}
@@ -462,6 +470,10 @@ extension ProtobufUnittest_TestImportEnumMap: SwiftProtobuf._MessageImplementati
     1: .standard(proto: "import_enum_amp"),
   ]
 
+  public var _messageSizeCacheKey: UnsafeMutableRawPointer? {
+    return nil
+  }
+
   func _protobuf_generated_isEqualTo(other: ProtobufUnittest_TestImportEnumMap) -> Bool {
     if self.importEnumAmp != other.importEnumAmp {return false}
     if unknownFields != other.unknownFields {return false}
@@ -473,6 +485,10 @@ extension ProtobufUnittest_TestIntIntMap: SwiftProtobuf._MessageImplementationBa
   static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .same(proto: "m"),
   ]
+
+  public var _messageSizeCacheKey: UnsafeMutableRawPointer? {
+    return nil
+  }
 
   func _protobuf_generated_isEqualTo(other: ProtobufUnittest_TestIntIntMap) -> Bool {
     if self.m != other.m {return false}
@@ -496,6 +512,10 @@ extension ProtobufUnittest_TestMaps: SwiftProtobuf._MessageImplementationBase, S
     11: .standard(proto: "m_bool"),
     12: .standard(proto: "m_string"),
   ]
+
+  public var _messageSizeCacheKey: UnsafeMutableRawPointer? {
+    return nil
+  }
 
   func _protobuf_generated_isEqualTo(other: ProtobufUnittest_TestMaps) -> Bool {
     if self.mInt32 != other.mInt32 {return false}
@@ -537,6 +557,10 @@ extension ProtobufUnittest_TestSubmessageMaps: SwiftProtobuf._MessageImplementat
       _storage = _StorageClass(copying: _storage)
     }
     return _storage
+  }
+
+  public var _messageSizeCacheKey: UnsafeMutableRawPointer? {
+    return Unmanaged.passUnretained(_storage).toOpaque()
   }
 
   func _protobuf_generated_isEqualTo(other: ProtobufUnittest_TestSubmessageMaps) -> Bool {

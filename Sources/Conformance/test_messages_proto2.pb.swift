@@ -1907,6 +1907,10 @@ extension ProtobufTestMessages_Proto2_TestAllTypesProto2: SwiftProtobuf._Message
     return _storage
   }
 
+  public var _messageSizeCacheKey: UnsafeMutableRawPointer? {
+    return Unmanaged.passUnretained(_storage).toOpaque()
+  }
+
   func _protobuf_generated_isEqualTo(other: ProtobufTestMessages_Proto2_TestAllTypesProto2) -> Bool {
     if _storage !== other._storage {
       let storagesAreEqual: Bool = withExtendedLifetime((_storage, other._storage)) { (_args: (_StorageClass, _StorageClass)) in
@@ -2040,6 +2044,10 @@ extension ProtobufTestMessages_Proto2_TestAllTypesProto2.NestedMessage: SwiftPro
     return _storage
   }
 
+  public var _messageSizeCacheKey: UnsafeMutableRawPointer? {
+    return Unmanaged.passUnretained(_storage).toOpaque()
+  }
+
   func _protobuf_generated_isEqualTo(other: ProtobufTestMessages_Proto2_TestAllTypesProto2.NestedMessage) -> Bool {
     if _storage !== other._storage {
       let storagesAreEqual: Bool = withExtendedLifetime((_storage, other._storage)) { (_args: (_StorageClass, _StorageClass)) in
@@ -2062,6 +2070,10 @@ extension ProtobufTestMessages_Proto2_TestAllTypesProto2.DataMessage: SwiftProto
     203: .standard(proto: "group_uint32"),
   ]
 
+  public var _messageSizeCacheKey: UnsafeMutableRawPointer? {
+    return nil
+  }
+
   func _protobuf_generated_isEqualTo(other: ProtobufTestMessages_Proto2_TestAllTypesProto2.DataMessage) -> Bool {
     if self._groupInt32 != other._groupInt32 {return false}
     if self._groupUint32 != other._groupUint32 {return false}
@@ -2072,6 +2084,10 @@ extension ProtobufTestMessages_Proto2_TestAllTypesProto2.DataMessage: SwiftProto
 
 extension ProtobufTestMessages_Proto2_TestAllTypesProto2.MessageSetCorrect: SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let _protobuf_nameMap = SwiftProtobuf._NameMap()
+
+  public var _messageSizeCacheKey: UnsafeMutableRawPointer? {
+    return nil
+  }
 
   func _protobuf_generated_isEqualTo(other: ProtobufTestMessages_Proto2_TestAllTypesProto2.MessageSetCorrect) -> Bool {
     if unknownFields != other.unknownFields {return false}
@@ -2085,6 +2101,10 @@ extension ProtobufTestMessages_Proto2_TestAllTypesProto2.MessageSetCorrectExtens
     25: .same(proto: "str"),
   ]
 
+  public var _messageSizeCacheKey: UnsafeMutableRawPointer? {
+    return nil
+  }
+
   func _protobuf_generated_isEqualTo(other: ProtobufTestMessages_Proto2_TestAllTypesProto2.MessageSetCorrectExtension1) -> Bool {
     if self._str != other._str {return false}
     if unknownFields != other.unknownFields {return false}
@@ -2097,6 +2117,10 @@ extension ProtobufTestMessages_Proto2_TestAllTypesProto2.MessageSetCorrectExtens
     9: .same(proto: "i"),
   ]
 
+  public var _messageSizeCacheKey: UnsafeMutableRawPointer? {
+    return nil
+  }
+
   func _protobuf_generated_isEqualTo(other: ProtobufTestMessages_Proto2_TestAllTypesProto2.MessageSetCorrectExtension2) -> Bool {
     if self._i != other._i {return false}
     if unknownFields != other.unknownFields {return false}
@@ -2108,6 +2132,10 @@ extension ProtobufTestMessages_Proto2_ForeignMessageProto2: SwiftProtobuf._Messa
   static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .same(proto: "c"),
   ]
+
+  public var _messageSizeCacheKey: UnsafeMutableRawPointer? {
+    return nil
+  }
 
   func _protobuf_generated_isEqualTo(other: ProtobufTestMessages_Proto2_ForeignMessageProto2) -> Bool {
     if self._c != other._c {return false}

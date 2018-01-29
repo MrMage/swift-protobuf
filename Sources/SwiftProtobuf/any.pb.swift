@@ -222,6 +222,10 @@ extension Google_Protobuf_Any: SwiftProtobuf._MessageImplementationBase, SwiftPr
     return _storage
   }
 
+  public var _messageSizeCacheKey: UnsafeMutableRawPointer? {
+    return Unmanaged.passUnretained(_storage).toOpaque()
+  }
+
   public func _protobuf_generated_isEqualTo(other: Google_Protobuf_Any) -> Bool {
     if _storage !== other._storage {
       let storagesAreEqual: Bool = _storage.isEqualTo(other: other._storage)

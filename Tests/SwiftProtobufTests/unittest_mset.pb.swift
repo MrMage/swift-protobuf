@@ -391,6 +391,10 @@ extension ProtobufUnittest_TestMessageSetContainer: SwiftProtobuf._MessageImplem
     return _storage
   }
 
+  public var _messageSizeCacheKey: UnsafeMutableRawPointer? {
+    return Unmanaged.passUnretained(_storage).toOpaque()
+  }
+
   func _protobuf_generated_isEqualTo(other: ProtobufUnittest_TestMessageSetContainer) -> Bool {
     if _storage !== other._storage {
       let storagesAreEqual: Bool = withExtendedLifetime((_storage, other._storage)) { (_args: (_StorageClass, _StorageClass)) in
@@ -411,6 +415,10 @@ extension ProtobufUnittest_TestMessageSetExtension1: SwiftProtobuf._MessageImple
     15: .same(proto: "i"),
   ]
 
+  public var _messageSizeCacheKey: UnsafeMutableRawPointer? {
+    return nil
+  }
+
   func _protobuf_generated_isEqualTo(other: ProtobufUnittest_TestMessageSetExtension1) -> Bool {
     if self._i != other._i {return false}
     if unknownFields != other.unknownFields {return false}
@@ -422,6 +430,10 @@ extension ProtobufUnittest_TestMessageSetExtension2: SwiftProtobuf._MessageImple
   static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     25: .same(proto: "str"),
   ]
+
+  public var _messageSizeCacheKey: UnsafeMutableRawPointer? {
+    return nil
+  }
 
   func _protobuf_generated_isEqualTo(other: ProtobufUnittest_TestMessageSetExtension2) -> Bool {
     if self._str != other._str {return false}
@@ -435,6 +447,10 @@ extension ProtobufUnittest_RawMessageSet: SwiftProtobuf._MessageImplementationBa
     1: .unique(proto: "Item", json: "item"),
   ]
 
+  public var _messageSizeCacheKey: UnsafeMutableRawPointer? {
+    return nil
+  }
+
   func _protobuf_generated_isEqualTo(other: ProtobufUnittest_RawMessageSet) -> Bool {
     if self.item != other.item {return false}
     if unknownFields != other.unknownFields {return false}
@@ -447,6 +463,10 @@ extension ProtobufUnittest_RawMessageSet.Item: SwiftProtobuf._MessageImplementat
     2: .standard(proto: "type_id"),
     3: .same(proto: "message"),
   ]
+
+  public var _messageSizeCacheKey: UnsafeMutableRawPointer? {
+    return nil
+  }
 
   func _protobuf_generated_isEqualTo(other: ProtobufUnittest_RawMessageSet.Item) -> Bool {
     if self._typeID != other._typeID {return false}

@@ -256,6 +256,10 @@ fileprivate let _protobuf_package = "protobuf_unittest.extend2"
 extension ProtobufUnittest_Extend2_MyMessage: SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let _protobuf_nameMap = SwiftProtobuf._NameMap()
 
+  public var _messageSizeCacheKey: UnsafeMutableRawPointer? {
+    return nil
+  }
+
   func _protobuf_generated_isEqualTo(other: ProtobufUnittest_Extend2_MyMessage) -> Bool {
     if unknownFields != other.unknownFields {return false}
     return true
@@ -266,6 +270,10 @@ extension ProtobufUnittest_Extend2_MyMessage.C: SwiftProtobuf._MessageImplementa
   static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1210: .same(proto: "c"),
   ]
+
+  public var _messageSizeCacheKey: UnsafeMutableRawPointer? {
+    return nil
+  }
 
   func _protobuf_generated_isEqualTo(other: ProtobufUnittest_Extend2_MyMessage.C) -> Bool {
     if self._c != other._c {return false}
@@ -278,6 +286,10 @@ extension ProtobufUnittest_Extend2_C: SwiftProtobuf._MessageImplementationBase, 
   static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1220: .same(proto: "c"),
   ]
+
+  public var _messageSizeCacheKey: UnsafeMutableRawPointer? {
+    return nil
+  }
 
   func _protobuf_generated_isEqualTo(other: ProtobufUnittest_Extend2_C) -> Bool {
     if self._c != other._c {return false}

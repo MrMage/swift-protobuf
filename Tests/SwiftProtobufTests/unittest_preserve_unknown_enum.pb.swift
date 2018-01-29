@@ -346,6 +346,10 @@ extension Proto3PreserveUnknownEnumUnittest_MyMessage: SwiftProtobuf._MessageImp
     6: .standard(proto: "oneof_e_2"),
   ]
 
+  public var _messageSizeCacheKey: UnsafeMutableRawPointer? {
+    return nil
+  }
+
   func _protobuf_generated_isEqualTo(other: Proto3PreserveUnknownEnumUnittest_MyMessage) -> Bool {
     if self.e != other.e {return false}
     if self.repeatedE != other.repeatedE {return false}
@@ -366,6 +370,10 @@ extension Proto3PreserveUnknownEnumUnittest_MyMessagePlusExtra: SwiftProtobuf._M
     5: .standard(proto: "oneof_e_1"),
     6: .standard(proto: "oneof_e_2"),
   ]
+
+  public var _messageSizeCacheKey: UnsafeMutableRawPointer? {
+    return nil
+  }
 
   func _protobuf_generated_isEqualTo(other: Proto3PreserveUnknownEnumUnittest_MyMessagePlusExtra) -> Bool {
     if self.e != other.e {return false}

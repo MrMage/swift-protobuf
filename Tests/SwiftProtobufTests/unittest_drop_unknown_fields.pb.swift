@@ -210,6 +210,10 @@ extension UnittestDropUnknownFields_Foo: SwiftProtobuf._MessageImplementationBas
     2: .standard(proto: "enum_value"),
   ]
 
+  public var _messageSizeCacheKey: UnsafeMutableRawPointer? {
+    return nil
+  }
+
   func _protobuf_generated_isEqualTo(other: UnittestDropUnknownFields_Foo) -> Bool {
     if self.int32Value != other.int32Value {return false}
     if self.enumValue != other.enumValue {return false}
@@ -232,6 +236,10 @@ extension UnittestDropUnknownFields_FooWithExtraFields: SwiftProtobuf._MessageIm
     2: .standard(proto: "enum_value"),
     3: .standard(proto: "extra_int32_value"),
   ]
+
+  public var _messageSizeCacheKey: UnsafeMutableRawPointer? {
+    return nil
+  }
 
   func _protobuf_generated_isEqualTo(other: UnittestDropUnknownFields_FooWithExtraFields) -> Bool {
     if self.int32Value != other.int32Value {return false}

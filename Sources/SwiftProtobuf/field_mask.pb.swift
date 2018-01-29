@@ -299,6 +299,10 @@ extension Google_Protobuf_FieldMask: SwiftProtobuf._MessageImplementationBase, S
     1: .same(proto: "paths"),
   ]
 
+  public var _messageSizeCacheKey: UnsafeMutableRawPointer? {
+    return nil
+  }
+
   public func _protobuf_generated_isEqualTo(other: Google_Protobuf_FieldMask) -> Bool {
     if self.paths != other.paths {return false}
     if unknownFields != other.unknownFields {return false}

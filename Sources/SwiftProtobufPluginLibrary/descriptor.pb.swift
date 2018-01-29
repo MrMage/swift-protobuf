@@ -3176,6 +3176,10 @@ extension Google_Protobuf_FileDescriptorSet: SwiftProtobuf._MessageImplementatio
     1: .same(proto: "file"),
   ]
 
+  public var _messageSizeCacheKey: UnsafeMutableRawPointer? {
+    return nil
+  }
+
   public func _protobuf_generated_isEqualTo(other: Google_Protobuf_FileDescriptorSet) -> Bool {
     if self.file != other.file {return false}
     if unknownFields != other.unknownFields {return false}
@@ -3238,6 +3242,10 @@ extension Google_Protobuf_FileDescriptorProto: SwiftProtobuf._MessageImplementat
       _storage = _StorageClass(copying: _storage)
     }
     return _storage
+  }
+
+  public var _messageSizeCacheKey: UnsafeMutableRawPointer? {
+    return Unmanaged.passUnretained(_storage).toOpaque()
   }
 
   public func _protobuf_generated_isEqualTo(other: Google_Protobuf_FileDescriptorProto) -> Bool {
@@ -3317,6 +3325,10 @@ extension Google_Protobuf_DescriptorProto: SwiftProtobuf._MessageImplementationB
     return _storage
   }
 
+  public var _messageSizeCacheKey: UnsafeMutableRawPointer? {
+    return Unmanaged.passUnretained(_storage).toOpaque()
+  }
+
   public func _protobuf_generated_isEqualTo(other: Google_Protobuf_DescriptorProto) -> Bool {
     if _storage !== other._storage {
       let storagesAreEqual: Bool = withExtendedLifetime((_storage, other._storage)) { (_args: (_StorageClass, _StorageClass)) in
@@ -3371,6 +3383,10 @@ extension Google_Protobuf_DescriptorProto.ExtensionRange: SwiftProtobuf._Message
     return _storage
   }
 
+  public var _messageSizeCacheKey: UnsafeMutableRawPointer? {
+    return Unmanaged.passUnretained(_storage).toOpaque()
+  }
+
   public func _protobuf_generated_isEqualTo(other: Google_Protobuf_DescriptorProto.ExtensionRange) -> Bool {
     if _storage !== other._storage {
       let storagesAreEqual: Bool = withExtendedLifetime((_storage, other._storage)) { (_args: (_StorageClass, _StorageClass)) in
@@ -3394,6 +3410,10 @@ extension Google_Protobuf_DescriptorProto.ReservedRange: SwiftProtobuf._MessageI
     2: .same(proto: "end"),
   ]
 
+  public var _messageSizeCacheKey: UnsafeMutableRawPointer? {
+    return nil
+  }
+
   public func _protobuf_generated_isEqualTo(other: Google_Protobuf_DescriptorProto.ReservedRange) -> Bool {
     if self._start != other._start {return false}
     if self._end != other._end {return false}
@@ -3406,6 +3426,10 @@ extension Google_Protobuf_ExtensionRangeOptions: SwiftProtobuf._MessageImplement
   public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     999: .standard(proto: "uninterpreted_option"),
   ]
+
+  public var _messageSizeCacheKey: UnsafeMutableRawPointer? {
+    return nil
+  }
 
   public func _protobuf_generated_isEqualTo(other: Google_Protobuf_ExtensionRangeOptions) -> Bool {
     if self.uninterpretedOption != other.uninterpretedOption {return false}
@@ -3464,6 +3488,10 @@ extension Google_Protobuf_FieldDescriptorProto: SwiftProtobuf._MessageImplementa
       _storage = _StorageClass(copying: _storage)
     }
     return _storage
+  }
+
+  public var _messageSizeCacheKey: UnsafeMutableRawPointer? {
+    return Unmanaged.passUnretained(_storage).toOpaque()
   }
 
   public func _protobuf_generated_isEqualTo(other: Google_Protobuf_FieldDescriptorProto) -> Bool {
@@ -3548,6 +3576,10 @@ extension Google_Protobuf_OneofDescriptorProto: SwiftProtobuf._MessageImplementa
     return _storage
   }
 
+  public var _messageSizeCacheKey: UnsafeMutableRawPointer? {
+    return Unmanaged.passUnretained(_storage).toOpaque()
+  }
+
   public func _protobuf_generated_isEqualTo(other: Google_Protobuf_OneofDescriptorProto) -> Bool {
     if _storage !== other._storage {
       let storagesAreEqual: Bool = withExtendedLifetime((_storage, other._storage)) { (_args: (_StorageClass, _StorageClass)) in
@@ -3600,6 +3632,10 @@ extension Google_Protobuf_EnumDescriptorProto: SwiftProtobuf._MessageImplementat
     return _storage
   }
 
+  public var _messageSizeCacheKey: UnsafeMutableRawPointer? {
+    return Unmanaged.passUnretained(_storage).toOpaque()
+  }
+
   public func _protobuf_generated_isEqualTo(other: Google_Protobuf_EnumDescriptorProto) -> Bool {
     if _storage !== other._storage {
       let storagesAreEqual: Bool = withExtendedLifetime((_storage, other._storage)) { (_args: (_StorageClass, _StorageClass)) in
@@ -3624,6 +3660,10 @@ extension Google_Protobuf_EnumDescriptorProto.EnumReservedRange: SwiftProtobuf._
     1: .same(proto: "start"),
     2: .same(proto: "end"),
   ]
+
+  public var _messageSizeCacheKey: UnsafeMutableRawPointer? {
+    return nil
+  }
 
   public func _protobuf_generated_isEqualTo(other: Google_Protobuf_EnumDescriptorProto.EnumReservedRange) -> Bool {
     if self._start != other._start {return false}
@@ -3661,6 +3701,10 @@ extension Google_Protobuf_EnumValueDescriptorProto: SwiftProtobuf._MessageImplem
       _storage = _StorageClass(copying: _storage)
     }
     return _storage
+  }
+
+  public var _messageSizeCacheKey: UnsafeMutableRawPointer? {
+    return Unmanaged.passUnretained(_storage).toOpaque()
   }
 
   public func _protobuf_generated_isEqualTo(other: Google_Protobuf_EnumValueDescriptorProto) -> Bool {
@@ -3708,6 +3752,10 @@ extension Google_Protobuf_ServiceDescriptorProto: SwiftProtobuf._MessageImplemen
       _storage = _StorageClass(copying: _storage)
     }
     return _storage
+  }
+
+  public var _messageSizeCacheKey: UnsafeMutableRawPointer? {
+    return Unmanaged.passUnretained(_storage).toOpaque()
   }
 
   public func _protobuf_generated_isEqualTo(other: Google_Protobuf_ServiceDescriptorProto) -> Bool {
@@ -3764,6 +3812,10 @@ extension Google_Protobuf_MethodDescriptorProto: SwiftProtobuf._MessageImplement
       _storage = _StorageClass(copying: _storage)
     }
     return _storage
+  }
+
+  public var _messageSizeCacheKey: UnsafeMutableRawPointer? {
+    return Unmanaged.passUnretained(_storage).toOpaque()
   }
 
   public func _protobuf_generated_isEqualTo(other: Google_Protobuf_MethodDescriptorProto) -> Bool {
@@ -3864,6 +3916,10 @@ extension Google_Protobuf_FileOptions: SwiftProtobuf._MessageImplementationBase,
     return _storage
   }
 
+  public var _messageSizeCacheKey: UnsafeMutableRawPointer? {
+    return Unmanaged.passUnretained(_storage).toOpaque()
+  }
+
   public func _protobuf_generated_isEqualTo(other: Google_Protobuf_FileOptions) -> Bool {
     if _storage !== other._storage {
       let storagesAreEqual: Bool = withExtendedLifetime((_storage, other._storage)) { (_args: (_StorageClass, _StorageClass)) in
@@ -3915,6 +3971,10 @@ extension Google_Protobuf_MessageOptions: SwiftProtobuf._MessageImplementationBa
     999: .standard(proto: "uninterpreted_option"),
   ]
 
+  public var _messageSizeCacheKey: UnsafeMutableRawPointer? {
+    return nil
+  }
+
   public func _protobuf_generated_isEqualTo(other: Google_Protobuf_MessageOptions) -> Bool {
     if self._messageSetWireFormat != other._messageSetWireFormat {return false}
     if self._noStandardDescriptorAccessor != other._noStandardDescriptorAccessor {return false}
@@ -3937,6 +3997,10 @@ extension Google_Protobuf_FieldOptions: SwiftProtobuf._MessageImplementationBase
     10: .same(proto: "weak"),
     999: .standard(proto: "uninterpreted_option"),
   ]
+
+  public var _messageSizeCacheKey: UnsafeMutableRawPointer? {
+    return nil
+  }
 
   public func _protobuf_generated_isEqualTo(other: Google_Protobuf_FieldOptions) -> Bool {
     if self._ctype != other._ctype {return false}
@@ -3973,6 +4037,10 @@ extension Google_Protobuf_OneofOptions: SwiftProtobuf._MessageImplementationBase
     999: .standard(proto: "uninterpreted_option"),
   ]
 
+  public var _messageSizeCacheKey: UnsafeMutableRawPointer? {
+    return nil
+  }
+
   public func _protobuf_generated_isEqualTo(other: Google_Protobuf_OneofOptions) -> Bool {
     if self.uninterpretedOption != other.uninterpretedOption {return false}
     if unknownFields != other.unknownFields {return false}
@@ -3987,6 +4055,10 @@ extension Google_Protobuf_EnumOptions: SwiftProtobuf._MessageImplementationBase,
     3: .same(proto: "deprecated"),
     999: .standard(proto: "uninterpreted_option"),
   ]
+
+  public var _messageSizeCacheKey: UnsafeMutableRawPointer? {
+    return nil
+  }
 
   public func _protobuf_generated_isEqualTo(other: Google_Protobuf_EnumOptions) -> Bool {
     if self._allowAlias != other._allowAlias {return false}
@@ -4004,6 +4076,10 @@ extension Google_Protobuf_EnumValueOptions: SwiftProtobuf._MessageImplementation
     999: .standard(proto: "uninterpreted_option"),
   ]
 
+  public var _messageSizeCacheKey: UnsafeMutableRawPointer? {
+    return nil
+  }
+
   public func _protobuf_generated_isEqualTo(other: Google_Protobuf_EnumValueOptions) -> Bool {
     if self._deprecated != other._deprecated {return false}
     if self.uninterpretedOption != other.uninterpretedOption {return false}
@@ -4018,6 +4094,10 @@ extension Google_Protobuf_ServiceOptions: SwiftProtobuf._MessageImplementationBa
     33: .same(proto: "deprecated"),
     999: .standard(proto: "uninterpreted_option"),
   ]
+
+  public var _messageSizeCacheKey: UnsafeMutableRawPointer? {
+    return nil
+  }
 
   public func _protobuf_generated_isEqualTo(other: Google_Protobuf_ServiceOptions) -> Bool {
     if self._deprecated != other._deprecated {return false}
@@ -4034,6 +4114,10 @@ extension Google_Protobuf_MethodOptions: SwiftProtobuf._MessageImplementationBas
     34: .standard(proto: "idempotency_level"),
     999: .standard(proto: "uninterpreted_option"),
   ]
+
+  public var _messageSizeCacheKey: UnsafeMutableRawPointer? {
+    return nil
+  }
 
   public func _protobuf_generated_isEqualTo(other: Google_Protobuf_MethodOptions) -> Bool {
     if self._deprecated != other._deprecated {return false}
@@ -4064,6 +4148,10 @@ extension Google_Protobuf_UninterpretedOption: SwiftProtobuf._MessageImplementat
     8: .standard(proto: "aggregate_value"),
   ]
 
+  public var _messageSizeCacheKey: UnsafeMutableRawPointer? {
+    return nil
+  }
+
   public func _protobuf_generated_isEqualTo(other: Google_Protobuf_UninterpretedOption) -> Bool {
     if self.name != other.name {return false}
     if self._identifierValue != other._identifierValue {return false}
@@ -4083,6 +4171,10 @@ extension Google_Protobuf_UninterpretedOption.NamePart: SwiftProtobuf._MessageIm
     2: .standard(proto: "is_extension"),
   ]
 
+  public var _messageSizeCacheKey: UnsafeMutableRawPointer? {
+    return nil
+  }
+
   public func _protobuf_generated_isEqualTo(other: Google_Protobuf_UninterpretedOption.NamePart) -> Bool {
     if self._namePart != other._namePart {return false}
     if self._isExtension != other._isExtension {return false}
@@ -4095,6 +4187,10 @@ extension Google_Protobuf_SourceCodeInfo: SwiftProtobuf._MessageImplementationBa
   public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .same(proto: "location"),
   ]
+
+  public var _messageSizeCacheKey: UnsafeMutableRawPointer? {
+    return nil
+  }
 
   public func _protobuf_generated_isEqualTo(other: Google_Protobuf_SourceCodeInfo) -> Bool {
     if self.location != other.location {return false}
@@ -4112,6 +4208,10 @@ extension Google_Protobuf_SourceCodeInfo.Location: SwiftProtobuf._MessageImpleme
     6: .standard(proto: "leading_detached_comments"),
   ]
 
+  public var _messageSizeCacheKey: UnsafeMutableRawPointer? {
+    return nil
+  }
+
   public func _protobuf_generated_isEqualTo(other: Google_Protobuf_SourceCodeInfo.Location) -> Bool {
     if self.path != other.path {return false}
     if self.span != other.span {return false}
@@ -4128,6 +4228,10 @@ extension Google_Protobuf_GeneratedCodeInfo: SwiftProtobuf._MessageImplementatio
     1: .same(proto: "annotation"),
   ]
 
+  public var _messageSizeCacheKey: UnsafeMutableRawPointer? {
+    return nil
+  }
+
   public func _protobuf_generated_isEqualTo(other: Google_Protobuf_GeneratedCodeInfo) -> Bool {
     if self.annotation != other.annotation {return false}
     if unknownFields != other.unknownFields {return false}
@@ -4142,6 +4246,10 @@ extension Google_Protobuf_GeneratedCodeInfo.Annotation: SwiftProtobuf._MessageIm
     3: .same(proto: "begin"),
     4: .same(proto: "end"),
   ]
+
+  public var _messageSizeCacheKey: UnsafeMutableRawPointer? {
+    return nil
+  }
 
   public func _protobuf_generated_isEqualTo(other: Google_Protobuf_GeneratedCodeInfo.Annotation) -> Bool {
     if self.path != other.path {return false}

@@ -141,6 +141,10 @@ extension Proto2ArenaUnittest_NestedMessage: SwiftProtobuf._MessageImplementatio
     1: .same(proto: "d"),
   ]
 
+  public var _messageSizeCacheKey: UnsafeMutableRawPointer? {
+    return nil
+  }
+
   func _protobuf_generated_isEqualTo(other: Proto2ArenaUnittest_NestedMessage) -> Bool {
     if self._d != other._d {return false}
     if unknownFields != other.unknownFields {return false}
@@ -153,6 +157,10 @@ extension Proto2ArenaUnittest_ArenaMessage: SwiftProtobuf._MessageImplementation
     1: .standard(proto: "repeated_nested_message"),
     2: .standard(proto: "repeated_import_no_arena_message"),
   ]
+
+  public var _messageSizeCacheKey: UnsafeMutableRawPointer? {
+    return nil
+  }
 
   func _protobuf_generated_isEqualTo(other: Proto2ArenaUnittest_ArenaMessage) -> Bool {
     if self.repeatedNestedMessage != other.repeatedNestedMessage {return false}

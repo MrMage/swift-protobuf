@@ -101,6 +101,10 @@ extension ProtobufUnittestNoArena_ForeignMessageLite: SwiftProtobuf._MessageImpl
     1: .same(proto: "c"),
   ]
 
+  public var _messageSizeCacheKey: UnsafeMutableRawPointer? {
+    return nil
+  }
+
   func _protobuf_generated_isEqualTo(other: ProtobufUnittestNoArena_ForeignMessageLite) -> Bool {
     if self._c != other._c {return false}
     if unknownFields != other.unknownFields {return false}

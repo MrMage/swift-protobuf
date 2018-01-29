@@ -700,6 +700,10 @@ extension Google_Protobuf_Type: SwiftProtobuf._MessageImplementationBase, SwiftP
     return _storage
   }
 
+  public var _messageSizeCacheKey: UnsafeMutableRawPointer? {
+    return Unmanaged.passUnretained(_storage).toOpaque()
+  }
+
   public func _protobuf_generated_isEqualTo(other: Google_Protobuf_Type) -> Bool {
     if _storage !== other._storage {
       let storagesAreEqual: Bool = withExtendedLifetime((_storage, other._storage)) { (_args: (_StorageClass, _StorageClass)) in
@@ -733,6 +737,10 @@ extension Google_Protobuf_Field: SwiftProtobuf._MessageImplementationBase, Swift
     10: .standard(proto: "json_name"),
     11: .standard(proto: "default_value"),
   ]
+
+  public var _messageSizeCacheKey: UnsafeMutableRawPointer? {
+    return nil
+  }
 
   public func _protobuf_generated_isEqualTo(other: Google_Protobuf_Field) -> Bool {
     if self.kind != other.kind {return false}
@@ -819,6 +827,10 @@ extension Google_Protobuf_Enum: SwiftProtobuf._MessageImplementationBase, SwiftP
     return _storage
   }
 
+  public var _messageSizeCacheKey: UnsafeMutableRawPointer? {
+    return Unmanaged.passUnretained(_storage).toOpaque()
+  }
+
   public func _protobuf_generated_isEqualTo(other: Google_Protobuf_Enum) -> Bool {
     if _storage !== other._storage {
       let storagesAreEqual: Bool = withExtendedLifetime((_storage, other._storage)) { (_args: (_StorageClass, _StorageClass)) in
@@ -844,6 +856,10 @@ extension Google_Protobuf_EnumValue: SwiftProtobuf._MessageImplementationBase, S
     2: .same(proto: "number"),
     3: .same(proto: "options"),
   ]
+
+  public var _messageSizeCacheKey: UnsafeMutableRawPointer? {
+    return nil
+  }
 
   public func _protobuf_generated_isEqualTo(other: Google_Protobuf_EnumValue) -> Bool {
     if self.name != other.name {return false}
@@ -879,6 +895,10 @@ extension Google_Protobuf_Option: SwiftProtobuf._MessageImplementationBase, Swif
       _storage = _StorageClass(copying: _storage)
     }
     return _storage
+  }
+
+  public var _messageSizeCacheKey: UnsafeMutableRawPointer? {
+    return Unmanaged.passUnretained(_storage).toOpaque()
   }
 
   public func _protobuf_generated_isEqualTo(other: Google_Protobuf_Option) -> Bool {

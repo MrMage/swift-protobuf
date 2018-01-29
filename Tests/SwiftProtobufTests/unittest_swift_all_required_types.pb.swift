@@ -1282,6 +1282,10 @@ extension ProtobufUnittest_TestAllRequiredTypes: SwiftProtobuf._MessageImplement
     return _storage
   }
 
+  public var _messageSizeCacheKey: UnsafeMutableRawPointer? {
+    return Unmanaged.passUnretained(_storage).toOpaque()
+  }
+
   func _protobuf_generated_isEqualTo(other: ProtobufUnittest_TestAllRequiredTypes) -> Bool {
     if _storage !== other._storage {
       let storagesAreEqual: Bool = withExtendedLifetime((_storage, other._storage)) { (_args: (_StorageClass, _StorageClass)) in
@@ -1357,6 +1361,10 @@ extension ProtobufUnittest_TestAllRequiredTypes.NestedMessage: SwiftProtobuf._Me
     1: .same(proto: "bb"),
   ]
 
+  public var _messageSizeCacheKey: UnsafeMutableRawPointer? {
+    return nil
+  }
+
   func _protobuf_generated_isEqualTo(other: ProtobufUnittest_TestAllRequiredTypes.NestedMessage) -> Bool {
     if self._bb != other._bb {return false}
     if unknownFields != other.unknownFields {return false}
@@ -1368,6 +1376,10 @@ extension ProtobufUnittest_TestAllRequiredTypes.RequiredGroup: SwiftProtobuf._Me
   static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     17: .same(proto: "a"),
   ]
+
+  public var _messageSizeCacheKey: UnsafeMutableRawPointer? {
+    return nil
+  }
 
   func _protobuf_generated_isEqualTo(other: ProtobufUnittest_TestAllRequiredTypes.RequiredGroup) -> Bool {
     if self._a != other._a {return false}
@@ -1385,6 +1397,10 @@ extension ProtobufUnittest_TestSomeRequiredTypes: SwiftProtobuf._MessageImplemen
     5: .standard(proto: "required_bytes"),
     6: .standard(proto: "required_nested_enum"),
   ]
+
+  public var _messageSizeCacheKey: UnsafeMutableRawPointer? {
+    return nil
+  }
 
   func _protobuf_generated_isEqualTo(other: ProtobufUnittest_TestSomeRequiredTypes) -> Bool {
     if self._requiredInt32 != other._requiredInt32 {return false}

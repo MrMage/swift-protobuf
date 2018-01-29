@@ -256,6 +256,10 @@ fileprivate let _protobuf_package = "protobuf_unittest.extend4"
 extension Ext4MyMessage: SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let _protobuf_nameMap = SwiftProtobuf._NameMap()
 
+  public var _messageSizeCacheKey: UnsafeMutableRawPointer? {
+    return nil
+  }
+
   func _protobuf_generated_isEqualTo(other: Ext4MyMessage) -> Bool {
     if unknownFields != other.unknownFields {return false}
     return true
@@ -266,6 +270,10 @@ extension Ext4MyMessage.C: SwiftProtobuf._MessageImplementationBase, SwiftProtob
   static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1410: .same(proto: "c"),
   ]
+
+  public var _messageSizeCacheKey: UnsafeMutableRawPointer? {
+    return nil
+  }
 
   func _protobuf_generated_isEqualTo(other: Ext4MyMessage.C) -> Bool {
     if self._c != other._c {return false}
@@ -278,6 +286,10 @@ extension Ext4C: SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoN
   static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1420: .same(proto: "c"),
   ]
+
+  public var _messageSizeCacheKey: UnsafeMutableRawPointer? {
+    return nil
+  }
 
   func _protobuf_generated_isEqualTo(other: Ext4C) -> Bool {
     if self._c != other._c {return false}

@@ -404,6 +404,10 @@ extension Google_Protobuf_DoubleValue: SwiftProtobuf._MessageImplementationBase,
     1: .same(proto: "value"),
   ]
 
+  public var _messageSizeCacheKey: UnsafeMutableRawPointer? {
+    return nil
+  }
+
   public func _protobuf_generated_isEqualTo(other: Google_Protobuf_DoubleValue) -> Bool {
     if self.value != other.value {return false}
     if unknownFields != other.unknownFields {return false}
@@ -415,6 +419,10 @@ extension Google_Protobuf_FloatValue: SwiftProtobuf._MessageImplementationBase, 
   public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .same(proto: "value"),
   ]
+
+  public var _messageSizeCacheKey: UnsafeMutableRawPointer? {
+    return nil
+  }
 
   public func _protobuf_generated_isEqualTo(other: Google_Protobuf_FloatValue) -> Bool {
     if self.value != other.value {return false}
@@ -428,6 +436,10 @@ extension Google_Protobuf_Int64Value: SwiftProtobuf._MessageImplementationBase, 
     1: .same(proto: "value"),
   ]
 
+  public var _messageSizeCacheKey: UnsafeMutableRawPointer? {
+    return nil
+  }
+
   public func _protobuf_generated_isEqualTo(other: Google_Protobuf_Int64Value) -> Bool {
     if self.value != other.value {return false}
     if unknownFields != other.unknownFields {return false}
@@ -439,6 +451,10 @@ extension Google_Protobuf_UInt64Value: SwiftProtobuf._MessageImplementationBase,
   public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .same(proto: "value"),
   ]
+
+  public var _messageSizeCacheKey: UnsafeMutableRawPointer? {
+    return nil
+  }
 
   public func _protobuf_generated_isEqualTo(other: Google_Protobuf_UInt64Value) -> Bool {
     if self.value != other.value {return false}
@@ -452,6 +468,10 @@ extension Google_Protobuf_Int32Value: SwiftProtobuf._MessageImplementationBase, 
     1: .same(proto: "value"),
   ]
 
+  public var _messageSizeCacheKey: UnsafeMutableRawPointer? {
+    return nil
+  }
+
   public func _protobuf_generated_isEqualTo(other: Google_Protobuf_Int32Value) -> Bool {
     if self.value != other.value {return false}
     if unknownFields != other.unknownFields {return false}
@@ -463,6 +483,10 @@ extension Google_Protobuf_UInt32Value: SwiftProtobuf._MessageImplementationBase,
   public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .same(proto: "value"),
   ]
+
+  public var _messageSizeCacheKey: UnsafeMutableRawPointer? {
+    return nil
+  }
 
   public func _protobuf_generated_isEqualTo(other: Google_Protobuf_UInt32Value) -> Bool {
     if self.value != other.value {return false}
@@ -476,6 +500,10 @@ extension Google_Protobuf_BoolValue: SwiftProtobuf._MessageImplementationBase, S
     1: .same(proto: "value"),
   ]
 
+  public var _messageSizeCacheKey: UnsafeMutableRawPointer? {
+    return nil
+  }
+
   public func _protobuf_generated_isEqualTo(other: Google_Protobuf_BoolValue) -> Bool {
     if self.value != other.value {return false}
     if unknownFields != other.unknownFields {return false}
@@ -488,6 +516,10 @@ extension Google_Protobuf_StringValue: SwiftProtobuf._MessageImplementationBase,
     1: .same(proto: "value"),
   ]
 
+  public var _messageSizeCacheKey: UnsafeMutableRawPointer? {
+    return nil
+  }
+
   public func _protobuf_generated_isEqualTo(other: Google_Protobuf_StringValue) -> Bool {
     if self.value != other.value {return false}
     if unknownFields != other.unknownFields {return false}
@@ -499,6 +531,10 @@ extension Google_Protobuf_BytesValue: SwiftProtobuf._MessageImplementationBase, 
   public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .same(proto: "value"),
   ]
+
+  public var _messageSizeCacheKey: UnsafeMutableRawPointer? {
+    return nil
+  }
 
   public func _protobuf_generated_isEqualTo(other: Google_Protobuf_BytesValue) -> Bool {
     if self.value != other.value {return false}

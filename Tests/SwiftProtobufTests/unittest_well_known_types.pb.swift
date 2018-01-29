@@ -1198,6 +1198,10 @@ extension ProtobufUnittest_TestWellKnownTypes: SwiftProtobuf._MessageImplementat
     return _storage
   }
 
+  public var _messageSizeCacheKey: UnsafeMutableRawPointer? {
+    return Unmanaged.passUnretained(_storage).toOpaque()
+  }
+
   func _protobuf_generated_isEqualTo(other: ProtobufUnittest_TestWellKnownTypes) -> Bool {
     if _storage !== other._storage {
       let storagesAreEqual: Bool = withExtendedLifetime((_storage, other._storage)) { (_args: (_StorageClass, _StorageClass)) in
@@ -1306,6 +1310,10 @@ extension ProtobufUnittest_RepeatedWellKnownTypes: SwiftProtobuf._MessageImpleme
     return _storage
   }
 
+  public var _messageSizeCacheKey: UnsafeMutableRawPointer? {
+    return Unmanaged.passUnretained(_storage).toOpaque()
+  }
+
   func _protobuf_generated_isEqualTo(other: ProtobufUnittest_RepeatedWellKnownTypes) -> Bool {
     if _storage !== other._storage {
       let storagesAreEqual: Bool = withExtendedLifetime((_storage, other._storage)) { (_args: (_StorageClass, _StorageClass)) in
@@ -1377,6 +1385,10 @@ extension ProtobufUnittest_OneofWellKnownTypes: SwiftProtobuf._MessageImplementa
       _storage = _StorageClass(copying: _storage)
     }
     return _storage
+  }
+
+  public var _messageSizeCacheKey: UnsafeMutableRawPointer? {
+    return Unmanaged.passUnretained(_storage).toOpaque()
   }
 
   func _protobuf_generated_isEqualTo(other: ProtobufUnittest_OneofWellKnownTypes) -> Bool {
@@ -1467,6 +1479,10 @@ extension ProtobufUnittest_MapWellKnownTypes: SwiftProtobuf._MessageImplementati
       _storage = _StorageClass(copying: _storage)
     }
     return _storage
+  }
+
+  public var _messageSizeCacheKey: UnsafeMutableRawPointer? {
+    return Unmanaged.passUnretained(_storage).toOpaque()
   }
 
   func _protobuf_generated_isEqualTo(other: ProtobufUnittest_MapWellKnownTypes) -> Bool {

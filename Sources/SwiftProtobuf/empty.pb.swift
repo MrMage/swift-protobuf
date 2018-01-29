@@ -89,6 +89,10 @@ fileprivate let _protobuf_package = "google.protobuf"
 extension Google_Protobuf_Empty: SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let _protobuf_nameMap = SwiftProtobuf._NameMap()
 
+  public var _messageSizeCacheKey: UnsafeMutableRawPointer? {
+    return nil
+  }
+
   public func _protobuf_generated_isEqualTo(other: Google_Protobuf_Empty) -> Bool {
     if unknownFields != other.unknownFields {return false}
     return true

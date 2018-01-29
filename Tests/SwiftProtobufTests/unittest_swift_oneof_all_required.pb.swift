@@ -357,6 +357,10 @@ extension ProtobufUnittest_OneOfOptionMessage1: SwiftProtobuf._MessageImplementa
     1: .same(proto: "requiredField"),
   ]
 
+  public var _messageSizeCacheKey: UnsafeMutableRawPointer? {
+    return nil
+  }
+
   func _protobuf_generated_isEqualTo(other: ProtobufUnittest_OneOfOptionMessage1) -> Bool {
     if self._requiredField != other._requiredField {return false}
     if unknownFields != other.unknownFields {return false}
@@ -368,6 +372,10 @@ extension ProtobufUnittest_OneOfOptionMessage2: SwiftProtobuf._MessageImplementa
   static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .same(proto: "requiredField"),
   ]
+
+  public var _messageSizeCacheKey: UnsafeMutableRawPointer? {
+    return nil
+  }
 
   func _protobuf_generated_isEqualTo(other: ProtobufUnittest_OneOfOptionMessage2) -> Bool {
     if self._requiredField != other._requiredField {return false}
@@ -403,6 +411,10 @@ extension ProtobufUnittest_OneOfContainer: SwiftProtobuf._MessageImplementationB
     return _storage
   }
 
+  public var _messageSizeCacheKey: UnsafeMutableRawPointer? {
+    return Unmanaged.passUnretained(_storage).toOpaque()
+  }
+
   func _protobuf_generated_isEqualTo(other: ProtobufUnittest_OneOfContainer) -> Bool {
     if _storage !== other._storage {
       let storagesAreEqual: Bool = withExtendedLifetime((_storage, other._storage)) { (_args: (_StorageClass, _StorageClass)) in
@@ -423,6 +435,10 @@ extension ProtobufUnittest_OneOfContainer.Option3: SwiftProtobuf._MessageImpleme
     4: .same(proto: "a"),
     5: .same(proto: "b"),
   ]
+
+  public var _messageSizeCacheKey: UnsafeMutableRawPointer? {
+    return nil
+  }
 
   func _protobuf_generated_isEqualTo(other: ProtobufUnittest_OneOfContainer.Option3) -> Bool {
     if self._a != other._a {return false}

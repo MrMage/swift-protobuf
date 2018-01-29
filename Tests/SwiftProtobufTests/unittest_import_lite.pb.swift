@@ -142,6 +142,10 @@ extension ProtobufUnittestImport_ImportMessageLite: SwiftProtobuf._MessageImplem
     1: .same(proto: "d"),
   ]
 
+  public var _messageSizeCacheKey: UnsafeMutableRawPointer? {
+    return nil
+  }
+
   func _protobuf_generated_isEqualTo(other: ProtobufUnittestImport_ImportMessageLite) -> Bool {
     if self._d != other._d {return false}
     if unknownFields != other.unknownFields {return false}

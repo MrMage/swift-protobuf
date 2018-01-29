@@ -450,6 +450,10 @@ extension Google_Protobuf_Compiler_Version: SwiftProtobuf._MessageImplementation
     4: .same(proto: "suffix"),
   ]
 
+  public var _messageSizeCacheKey: UnsafeMutableRawPointer? {
+    return nil
+  }
+
   public func _protobuf_generated_isEqualTo(other: Google_Protobuf_Compiler_Version) -> Bool {
     if self._major != other._major {return false}
     if self._minor != other._minor {return false}
@@ -493,6 +497,10 @@ extension Google_Protobuf_Compiler_CodeGeneratorRequest: SwiftProtobuf._MessageI
     return _storage
   }
 
+  public var _messageSizeCacheKey: UnsafeMutableRawPointer? {
+    return Unmanaged.passUnretained(_storage).toOpaque()
+  }
+
   public func _protobuf_generated_isEqualTo(other: Google_Protobuf_Compiler_CodeGeneratorRequest) -> Bool {
     if _storage !== other._storage {
       let storagesAreEqual: Bool = withExtendedLifetime((_storage, other._storage)) { (_args: (_StorageClass, _StorageClass)) in
@@ -517,6 +525,10 @@ extension Google_Protobuf_Compiler_CodeGeneratorResponse: SwiftProtobuf._Message
     15: .same(proto: "file"),
   ]
 
+  public var _messageSizeCacheKey: UnsafeMutableRawPointer? {
+    return nil
+  }
+
   public func _protobuf_generated_isEqualTo(other: Google_Protobuf_Compiler_CodeGeneratorResponse) -> Bool {
     if self._error != other._error {return false}
     if self.file != other.file {return false}
@@ -531,6 +543,10 @@ extension Google_Protobuf_Compiler_CodeGeneratorResponse.File: SwiftProtobuf._Me
     2: .standard(proto: "insertion_point"),
     15: .same(proto: "content"),
   ]
+
+  public var _messageSizeCacheKey: UnsafeMutableRawPointer? {
+    return nil
+  }
 
   public func _protobuf_generated_isEqualTo(other: Google_Protobuf_Compiler_CodeGeneratorResponse.File) -> Bool {
     if self._name != other._name {return false}

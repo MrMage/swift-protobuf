@@ -175,6 +175,10 @@ extension Google_Protobuf_NoGenericServicesTest_TestMessage: SwiftProtobuf._Mess
     1: .same(proto: "a"),
   ]
 
+  public var _messageSizeCacheKey: UnsafeMutableRawPointer? {
+    return nil
+  }
+
   func _protobuf_generated_isEqualTo(other: Google_Protobuf_NoGenericServicesTest_TestMessage) -> Bool {
     if self._a != other._a {return false}
     if unknownFields != other.unknownFields {return false}

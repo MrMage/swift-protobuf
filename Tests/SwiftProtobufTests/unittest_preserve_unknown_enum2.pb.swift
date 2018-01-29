@@ -210,6 +210,10 @@ extension Proto2PreserveUnknownEnumUnittest_MyMessage: SwiftProtobuf._MessageImp
     6: .standard(proto: "oneof_e_2"),
   ]
 
+  public var _messageSizeCacheKey: UnsafeMutableRawPointer? {
+    return nil
+  }
+
   func _protobuf_generated_isEqualTo(other: Proto2PreserveUnknownEnumUnittest_MyMessage) -> Bool {
     if self._e != other._e {return false}
     if self.repeatedE != other.repeatedE {return false}

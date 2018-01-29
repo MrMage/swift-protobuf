@@ -390,6 +390,10 @@ extension Conformance_ConformanceRequest: SwiftProtobuf._MessageImplementationBa
     4: .standard(proto: "message_type"),
   ]
 
+  public var _messageSizeCacheKey: UnsafeMutableRawPointer? {
+    return nil
+  }
+
   func _protobuf_generated_isEqualTo(other: Conformance_ConformanceRequest) -> Bool {
     if self.payload != other.payload {return false}
     if self.requestedOutputFormat != other.requestedOutputFormat {return false}
@@ -408,6 +412,10 @@ extension Conformance_ConformanceResponse: SwiftProtobuf._MessageImplementationB
     4: .standard(proto: "json_payload"),
     5: .same(proto: "skipped"),
   ]
+
+  public var _messageSizeCacheKey: UnsafeMutableRawPointer? {
+    return nil
+  }
 
   func _protobuf_generated_isEqualTo(other: Conformance_ConformanceResponse) -> Bool {
     if self.result != other.result {return false}

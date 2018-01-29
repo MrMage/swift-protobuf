@@ -344,6 +344,10 @@ extension SwiftReservedTestExt2 {
 extension SwiftReservedTestExt2: SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let _protobuf_nameMap = SwiftProtobuf._NameMap()
 
+  public var _messageSizeCacheKey: UnsafeMutableRawPointer? {
+    return nil
+  }
+
   func _protobuf_generated_isEqualTo(other: SwiftReservedTestExt2) -> Bool {
     if unknownFields != other.unknownFields {return false}
     return true

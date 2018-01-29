@@ -431,6 +431,10 @@ extension Google_Protobuf_Api: SwiftProtobuf._MessageImplementationBase, SwiftPr
     return _storage
   }
 
+  public var _messageSizeCacheKey: UnsafeMutableRawPointer? {
+    return Unmanaged.passUnretained(_storage).toOpaque()
+  }
+
   public func _protobuf_generated_isEqualTo(other: Google_Protobuf_Api) -> Bool {
     if _storage !== other._storage {
       let storagesAreEqual: Bool = withExtendedLifetime((_storage, other._storage)) { (_args: (_StorageClass, _StorageClass)) in
@@ -463,6 +467,10 @@ extension Google_Protobuf_Method: SwiftProtobuf._MessageImplementationBase, Swif
     7: .same(proto: "syntax"),
   ]
 
+  public var _messageSizeCacheKey: UnsafeMutableRawPointer? {
+    return nil
+  }
+
   public func _protobuf_generated_isEqualTo(other: Google_Protobuf_Method) -> Bool {
     if self.name != other.name {return false}
     if self.requestTypeURL != other.requestTypeURL {return false}
@@ -481,6 +489,10 @@ extension Google_Protobuf_Mixin: SwiftProtobuf._MessageImplementationBase, Swift
     1: .same(proto: "name"),
     2: .same(proto: "root"),
   ]
+
+  public var _messageSizeCacheKey: UnsafeMutableRawPointer? {
+    return nil
+  }
 
   public func _protobuf_generated_isEqualTo(other: Google_Protobuf_Mixin) -> Bool {
     if self.name != other.name {return false}

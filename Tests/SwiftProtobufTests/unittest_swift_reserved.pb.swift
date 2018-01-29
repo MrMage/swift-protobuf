@@ -668,6 +668,10 @@ extension ProtobufUnittest_SwiftReservedTest: SwiftProtobuf._MessageImplementati
     30: .standard(proto: "required_int"),
   ]
 
+  public var _messageSizeCacheKey: UnsafeMutableRawPointer? {
+    return nil
+  }
+
   func _protobuf_generated_isEqualTo(other: ProtobufUnittest_SwiftReservedTest) -> Bool {
     if self._protoMessageName != other._protoMessageName {return false}
     if self._protoPackageName != other._protoPackageName {return false}
@@ -702,6 +706,10 @@ extension ProtobufUnittest_SwiftReservedTest.ProtocolEnum: SwiftProtobuf._ProtoN
 extension ProtobufUnittest_SwiftReservedTest.classMessage: SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let _protobuf_nameMap = SwiftProtobuf._NameMap()
 
+  public var _messageSizeCacheKey: UnsafeMutableRawPointer? {
+    return nil
+  }
+
   func _protobuf_generated_isEqualTo(other: ProtobufUnittest_SwiftReservedTest.classMessage) -> Bool {
     if unknownFields != other.unknownFields {return false}
     if _protobuf_extensionFieldValues != other._protobuf_extensionFieldValues {return false}
@@ -711,6 +719,10 @@ extension ProtobufUnittest_SwiftReservedTest.classMessage: SwiftProtobuf._Messag
 
 extension ProtobufUnittest_SwiftReservedTest.TypeMessage: SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let _protobuf_nameMap = SwiftProtobuf._NameMap()
+
+  public var _messageSizeCacheKey: UnsafeMutableRawPointer? {
+    return nil
+  }
 
   func _protobuf_generated_isEqualTo(other: ProtobufUnittest_SwiftReservedTest.TypeMessage) -> Bool {
     if unknownFields != other.unknownFields {return false}
@@ -722,6 +734,10 @@ extension ProtobufUnittest_SwiftReservedTest.TypeMessage: SwiftProtobuf._Message
 extension ProtobufUnittest_SwiftReservedTest.isEqual: SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let _protobuf_nameMap = SwiftProtobuf._NameMap()
 
+  public var _messageSizeCacheKey: UnsafeMutableRawPointer? {
+    return nil
+  }
+
   func _protobuf_generated_isEqualTo(other: ProtobufUnittest_SwiftReservedTest.isEqual) -> Bool {
     if unknownFields != other.unknownFields {return false}
     return true
@@ -730,6 +746,10 @@ extension ProtobufUnittest_SwiftReservedTest.isEqual: SwiftProtobuf._MessageImpl
 
 extension ProtobufUnittest_SwiftReservedTestExt: SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let _protobuf_nameMap = SwiftProtobuf._NameMap()
+
+  public var _messageSizeCacheKey: UnsafeMutableRawPointer? {
+    return nil
+  }
 
   func _protobuf_generated_isEqualTo(other: ProtobufUnittest_SwiftReservedTestExt) -> Bool {
     if unknownFields != other.unknownFields {return false}

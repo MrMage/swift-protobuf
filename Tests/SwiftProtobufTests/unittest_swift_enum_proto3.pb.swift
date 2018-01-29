@@ -289,6 +289,10 @@ extension Protobuf3Unittest_SwiftEnumTest: SwiftProtobuf._MessageImplementationB
     4: .same(proto: "values4"),
   ]
 
+  public var _messageSizeCacheKey: UnsafeMutableRawPointer? {
+    return nil
+  }
+
   func _protobuf_generated_isEqualTo(other: Protobuf3Unittest_SwiftEnumTest) -> Bool {
     if self.values1 != other.values1 {return false}
     if self.values2 != other.values2 {return false}
@@ -331,6 +335,10 @@ extension Protobuf3Unittest_SwiftEnumWithAliasTest: SwiftProtobuf._MessageImplem
   static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .same(proto: "values"),
   ]
+
+  public var _messageSizeCacheKey: UnsafeMutableRawPointer? {
+    return nil
+  }
 
   func _protobuf_generated_isEqualTo(other: Protobuf3Unittest_SwiftEnumWithAliasTest) -> Bool {
     if self.values != other.values {return false}

@@ -199,6 +199,10 @@ fileprivate let _protobuf_package = "protobuf_objc_unittest"
 extension ProtobufObjcUnittest_TestObjCStartupMessage: SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let _protobuf_nameMap = SwiftProtobuf._NameMap()
 
+  public var _messageSizeCacheKey: UnsafeMutableRawPointer? {
+    return nil
+  }
+
   func _protobuf_generated_isEqualTo(other: ProtobufObjcUnittest_TestObjCStartupMessage) -> Bool {
     if unknownFields != other.unknownFields {return false}
     if _protobuf_extensionFieldValues != other._protobuf_extensionFieldValues {return false}
@@ -208,6 +212,10 @@ extension ProtobufObjcUnittest_TestObjCStartupMessage: SwiftProtobuf._MessageImp
 
 extension ProtobufObjcUnittest_TestObjCStartupNested: SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let _protobuf_nameMap = SwiftProtobuf._NameMap()
+
+  public var _messageSizeCacheKey: UnsafeMutableRawPointer? {
+    return nil
+  }
 
   func _protobuf_generated_isEqualTo(other: ProtobufObjcUnittest_TestObjCStartupNested) -> Bool {
     if unknownFields != other.unknownFields {return false}

@@ -867,6 +867,10 @@ extension ProtobufUnittest_TestMap: SwiftProtobuf._MessageImplementationBase, Sw
     return _storage
   }
 
+  public var _messageSizeCacheKey: UnsafeMutableRawPointer? {
+    return Unmanaged.passUnretained(_storage).toOpaque()
+  }
+
   func _protobuf_generated_isEqualTo(other: ProtobufUnittest_TestMap) -> Bool {
     if _storage !== other._storage {
       let storagesAreEqual: Bool = withExtendedLifetime((_storage, other._storage)) { (_args: (_StorageClass, _StorageClass)) in
@@ -924,6 +928,10 @@ extension ProtobufUnittest_TestMapSubmessage: SwiftProtobuf._MessageImplementati
     return _storage
   }
 
+  public var _messageSizeCacheKey: UnsafeMutableRawPointer? {
+    return Unmanaged.passUnretained(_storage).toOpaque()
+  }
+
   func _protobuf_generated_isEqualTo(other: ProtobufUnittest_TestMapSubmessage) -> Bool {
     if _storage !== other._storage {
       let storagesAreEqual: Bool = withExtendedLifetime((_storage, other._storage)) { (_args: (_StorageClass, _StorageClass)) in
@@ -944,6 +952,10 @@ extension ProtobufUnittest_TestMessageMap: SwiftProtobuf._MessageImplementationB
     1: .standard(proto: "map_int32_message"),
   ]
 
+  public var _messageSizeCacheKey: UnsafeMutableRawPointer? {
+    return nil
+  }
+
   func _protobuf_generated_isEqualTo(other: ProtobufUnittest_TestMessageMap) -> Bool {
     if self.mapInt32Message != other.mapInt32Message {return false}
     if unknownFields != other.unknownFields {return false}
@@ -957,6 +969,10 @@ extension ProtobufUnittest_TestSameTypeMap: SwiftProtobuf._MessageImplementation
     2: .same(proto: "map2"),
   ]
 
+  public var _messageSizeCacheKey: UnsafeMutableRawPointer? {
+    return nil
+  }
+
   func _protobuf_generated_isEqualTo(other: ProtobufUnittest_TestSameTypeMap) -> Bool {
     if self.map1 != other.map1 {return false}
     if self.map2 != other.map2 {return false}
@@ -969,6 +985,10 @@ extension ProtobufUnittest_TestRequiredMessageMap: SwiftProtobuf._MessageImpleme
   static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .standard(proto: "map_field"),
   ]
+
+  public var _messageSizeCacheKey: UnsafeMutableRawPointer? {
+    return nil
+  }
 
   func _protobuf_generated_isEqualTo(other: ProtobufUnittest_TestRequiredMessageMap) -> Bool {
     if self.mapField != other.mapField {return false}
@@ -1052,6 +1072,10 @@ extension ProtobufUnittest_TestArenaMap: SwiftProtobuf._MessageImplementationBas
     return _storage
   }
 
+  public var _messageSizeCacheKey: UnsafeMutableRawPointer? {
+    return Unmanaged.passUnretained(_storage).toOpaque()
+  }
+
   func _protobuf_generated_isEqualTo(other: ProtobufUnittest_TestArenaMap) -> Bool {
     if _storage !== other._storage {
       let storagesAreEqual: Bool = withExtendedLifetime((_storage, other._storage)) { (_args: (_StorageClass, _StorageClass)) in
@@ -1089,6 +1113,10 @@ extension ProtobufUnittest_MessageContainingEnumCalledType: SwiftProtobuf._Messa
     1: .same(proto: "type"),
   ]
 
+  public var _messageSizeCacheKey: UnsafeMutableRawPointer? {
+    return nil
+  }
+
   func _protobuf_generated_isEqualTo(other: ProtobufUnittest_MessageContainingEnumCalledType) -> Bool {
     if self.type != other.type {return false}
     if unknownFields != other.unknownFields {return false}
@@ -1107,6 +1135,10 @@ extension ProtobufUnittest_MessageContainingMapCalledEntry: SwiftProtobuf._Messa
     1: .same(proto: "entry"),
   ]
 
+  public var _messageSizeCacheKey: UnsafeMutableRawPointer? {
+    return nil
+  }
+
   func _protobuf_generated_isEqualTo(other: ProtobufUnittest_MessageContainingMapCalledEntry) -> Bool {
     if self.entry != other.entry {return false}
     if unknownFields != other.unknownFields {return false}
@@ -1118,6 +1150,10 @@ extension ProtobufUnittest_TestRecursiveMapMessage: SwiftProtobuf._MessageImplem
   static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .same(proto: "a"),
   ]
+
+  public var _messageSizeCacheKey: UnsafeMutableRawPointer? {
+    return nil
+  }
 
   func _protobuf_generated_isEqualTo(other: ProtobufUnittest_TestRecursiveMapMessage) -> Bool {
     if self.a != other.a {return false}

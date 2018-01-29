@@ -559,6 +559,10 @@ extension SwiftTestGroupExtensions: SwiftProtobuf._MessageImplementationBase, Sw
     1: .same(proto: "a"),
   ]
 
+  public var _messageSizeCacheKey: UnsafeMutableRawPointer? {
+    return nil
+  }
+
   func _protobuf_generated_isEqualTo(other: SwiftTestGroupExtensions) -> Bool {
     if self._a != other._a {return false}
     if unknownFields != other.unknownFields {return false}
@@ -572,6 +576,10 @@ extension ExtensionGroup: SwiftProtobuf._MessageImplementationBase, SwiftProtobu
     1: .same(proto: "a"),
   ]
 
+  public var _messageSizeCacheKey: UnsafeMutableRawPointer? {
+    return nil
+  }
+
   func _protobuf_generated_isEqualTo(other: ExtensionGroup) -> Bool {
     if self._a != other._a {return false}
     if unknownFields != other.unknownFields {return false}
@@ -584,6 +592,10 @@ extension RepeatedExtensionGroup: SwiftProtobuf._MessageImplementationBase, Swif
     1: .same(proto: "a"),
   ]
 
+  public var _messageSizeCacheKey: UnsafeMutableRawPointer? {
+    return nil
+  }
+
   func _protobuf_generated_isEqualTo(other: RepeatedExtensionGroup) -> Bool {
     if self._a != other._a {return false}
     if unknownFields != other.unknownFields {return false}
@@ -595,6 +607,10 @@ extension SwiftTestGroupUnextended: SwiftProtobuf._MessageImplementationBase, Sw
   static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .same(proto: "a"),
   ]
+
+  public var _messageSizeCacheKey: UnsafeMutableRawPointer? {
+    return nil
+  }
 
   func _protobuf_generated_isEqualTo(other: SwiftTestGroupUnextended) -> Bool {
     if self._a != other._a {return false}
@@ -631,6 +647,10 @@ extension SwiftTestNestingGroupsMessage: SwiftProtobuf._MessageImplementationBas
       _storage = _StorageClass(copying: _storage)
     }
     return _storage
+  }
+
+  public var _messageSizeCacheKey: UnsafeMutableRawPointer? {
+    return Unmanaged.passUnretained(_storage).toOpaque()
   }
 
   func _protobuf_generated_isEqualTo(other: SwiftTestNestingGroupsMessage) -> Bool {
@@ -677,6 +697,10 @@ extension SwiftTestNestingGroupsMessage.SubGroup1: SwiftProtobuf._MessageImpleme
     return _storage
   }
 
+  public var _messageSizeCacheKey: UnsafeMutableRawPointer? {
+    return Unmanaged.passUnretained(_storage).toOpaque()
+  }
+
   func _protobuf_generated_isEqualTo(other: SwiftTestNestingGroupsMessage.SubGroup1) -> Bool {
     if _storage !== other._storage {
       let storagesAreEqual: Bool = withExtendedLifetime((_storage, other._storage)) { (_args: (_StorageClass, _StorageClass)) in
@@ -698,6 +722,10 @@ extension SwiftTestNestingGroupsMessage.SubGroup1.SubGroup2: SwiftProtobuf._Mess
     1: .standard(proto: "sub2_a"),
   ]
 
+  public var _messageSizeCacheKey: UnsafeMutableRawPointer? {
+    return nil
+  }
+
   func _protobuf_generated_isEqualTo(other: SwiftTestNestingGroupsMessage.SubGroup1.SubGroup2) -> Bool {
     if self._sub2A != other._sub2A {return false}
     if unknownFields != other.unknownFields {return false}
@@ -711,6 +739,10 @@ extension SwiftTestNestingGroupsMessage.SubGroup3: SwiftProtobuf._MessageImpleme
     2: .unique(proto: "SubGroup4", json: "subgroup4"),
   ]
 
+  public var _messageSizeCacheKey: UnsafeMutableRawPointer? {
+    return nil
+  }
+
   func _protobuf_generated_isEqualTo(other: SwiftTestNestingGroupsMessage.SubGroup3) -> Bool {
     if self._sub3A != other._sub3A {return false}
     if self.subGroup4 != other.subGroup4 {return false}
@@ -723,6 +755,10 @@ extension SwiftTestNestingGroupsMessage.SubGroup3.SubGroup4: SwiftProtobuf._Mess
   static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .standard(proto: "sub4_a"),
   ]
+
+  public var _messageSizeCacheKey: UnsafeMutableRawPointer? {
+    return nil
+  }
 
   func _protobuf_generated_isEqualTo(other: SwiftTestNestingGroupsMessage.SubGroup3.SubGroup4) -> Bool {
     if self._sub4A != other._sub4A {return false}

@@ -1189,6 +1189,10 @@ extension ProtobufUnittest_Message3: SwiftProtobuf._MessageImplementationBase, S
     return _storage
   }
 
+  public var _messageSizeCacheKey: UnsafeMutableRawPointer? {
+    return Unmanaged.passUnretained(_storage).toOpaque()
+  }
+
   func _protobuf_generated_isEqualTo(other: ProtobufUnittest_Message3) -> Bool {
     if _storage !== other._storage {
       let storagesAreEqual: Bool = withExtendedLifetime((_storage, other._storage)) { (_args: (_StorageClass, _StorageClass)) in
@@ -1269,6 +1273,10 @@ extension ProtobufUnittest_Message3.Enum: SwiftProtobuf._ProtoNameProviding {
 extension ProtobufUnittest_Msg3NoStorage: SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let _protobuf_nameMap = SwiftProtobuf._NameMap()
 
+  public var _messageSizeCacheKey: UnsafeMutableRawPointer? {
+    return nil
+  }
+
   func _protobuf_generated_isEqualTo(other: ProtobufUnittest_Msg3NoStorage) -> Bool {
     if unknownFields != other.unknownFields {return false}
     return true
@@ -1297,6 +1305,10 @@ extension ProtobufUnittest_Msg3UsesStorage: SwiftProtobuf._MessageImplementation
       _storage = _StorageClass(copying: _storage)
     }
     return _storage
+  }
+
+  public var _messageSizeCacheKey: UnsafeMutableRawPointer? {
+    return Unmanaged.passUnretained(_storage).toOpaque()
   }
 
   func _protobuf_generated_isEqualTo(other: ProtobufUnittest_Msg3UsesStorage) -> Bool {

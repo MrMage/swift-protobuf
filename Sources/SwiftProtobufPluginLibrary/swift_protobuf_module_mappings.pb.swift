@@ -123,6 +123,10 @@ extension SwiftProtobuf_GenSwift_ModuleMappings: SwiftProtobuf._MessageImplement
     1: .same(proto: "mapping"),
   ]
 
+  public var _messageSizeCacheKey: UnsafeMutableRawPointer? {
+    return nil
+  }
+
   public func _protobuf_generated_isEqualTo(other: SwiftProtobuf_GenSwift_ModuleMappings) -> Bool {
     if self.mapping != other.mapping {return false}
     if unknownFields != other.unknownFields {return false}
@@ -135,6 +139,10 @@ extension SwiftProtobuf_GenSwift_ModuleMappings.Entry: SwiftProtobuf._MessageImp
     1: .standard(proto: "module_name"),
     2: .standard(proto: "proto_file_path"),
   ]
+
+  public var _messageSizeCacheKey: UnsafeMutableRawPointer? {
+    return nil
+  }
 
   public func _protobuf_generated_isEqualTo(other: SwiftProtobuf_GenSwift_ModuleMappings.Entry) -> Bool {
     if self.moduleName != other.moduleName {return false}

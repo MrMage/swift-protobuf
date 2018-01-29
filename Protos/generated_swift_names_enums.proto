@@ -36,6 +36,7 @@ message GeneratedSwiftReservedEnums {
   enum BinaryEncodingMessageSetVisitor { NONE_BinaryEncodingMessageSetVisitor = 0; }
   enum BinaryEncodingSizeVisitor { NONE_BinaryEncodingSizeVisitor = 0; }
   enum BinaryEncodingVisitor { NONE_BinaryEncodingVisitor = 0; }
+  enum BinarySizeCache { NONE_BinarySizeCache = 0; }
   enum bodySize { NONE_bodySize = 0; }
   enum Bool { NONE_Bool = 0; }
   enum booleanLiteral { NONE_booleanLiteral = 0; }
@@ -213,6 +214,7 @@ message GeneratedSwiftReservedEnums {
   enum G { NONE_G = 0; }
   enum get { NONE_get = 0; }
   enum getExtensionValue { NONE_getExtensionValue = 0; }
+  enum getSerializedDataSize { NONE_getSerializedDataSize = 0; }
   enum googleapis { NONE_googleapis = 0; }
   enum Google_Protobuf_Any { NONE_Google_Protobuf_Any = 0; }
   enum Google_Protobuf_Api { NONE_Google_Protobuf_Api = 0; }
@@ -323,6 +325,8 @@ message GeneratedSwiftReservedEnums {
   enum MessageExtension { NONE_MessageExtension = 0; }
   enum MessageImplementationBase { NONE_MessageImplementationBase = 0; }
   enum MessageSet { NONE_MessageSet = 0; }
+  enum messageSizeCacheKey { NONE_messageSizeCacheKey = 0; }
+  enum MessageSizeCaching { NONE_MessageSizeCaching = 0; }
   enum messageType { NONE_messageType = 0; }
   enum Method { NONE_Method = 0; }
   enum methods { NONE_methods = 0; }
@@ -464,6 +468,7 @@ message GeneratedSwiftReservedEnums {
   enum setExtensionValue { NONE_setExtensionValue = 0; }
   enum shift { NONE_shift = 0; }
   enum SimpleExtensionMap { NONE_SimpleExtensionMap = 0; }
+  enum sizeCache { NONE_sizeCache = 0; }
   enum sizer { NONE_sizer = 0; }
   enum source { NONE_source = 0; }
   enum sourceContext { NONE_sourceContext = 0; }
@@ -535,6 +540,7 @@ message GeneratedSwiftReservedEnums {
   enum unpackTo { NONE_unpackTo = 0; }
   enum UnsafeBufferPointer { NONE_UnsafeBufferPointer = 0; }
   enum UnsafeMutablePointer { NONE_UnsafeMutablePointer = 0; }
+  enum UnsafeMutableRawPointer { NONE_UnsafeMutableRawPointer = 0; }
   enum UnsafePointer { NONE_UnsafePointer = 0; }
   enum updatedOptions { NONE_updatedOptions = 0; }
   enum url { NONE_url = 0; }
